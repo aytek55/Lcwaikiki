@@ -1,4 +1,4 @@
-(async function () {
+ï»¿(async function () {
     const PRODUCT_CONTAINER_SELECTOR = ".product-detail";
     const STORAGE_KEY = "recommended_products";
     const FAVORITES_KEY = "favorite_products";
@@ -15,10 +15,11 @@
             products = await response.json();
             localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
         } catch (error) {
-            console.error("Ürün listesi yüklenirken hata oluþtu:", error);
+            console.error("ÃœrÃ¼n listesi yÃ¼klenirken hata oluÅŸtu:", error);
             return;
         }
     }
+
 
     const carouselContainer = document.createElement("div");
     carouselContainer.id = "product-carousel";
@@ -39,8 +40,8 @@
         productCard.innerHTML = `
             <img src="${product.img}" alt="${product.name}" style="width: 100%; height: auto; border-radius: 5px; cursor: pointer;"> 
             <p style="font-size: 14px; margin: 5px 0;">${product.name}</p>
-            <p style="font-weight: bold;">${product.price} ?</p>
-            <span class="heart-icon" data-id="${product.id}" style="cursor: pointer; font-size: 20px; color: ${isFavorite ? 'blue' : 'gray'};">?</span>
+            <p style="font-weight: bold;">${product.price} â‚º</p>
+            <span class="heart-icon" data-id="${product.id}" style="cursor: pointer; font-size: 20px; color: ${isFavorite ? 'blue' : 'gray'};">â™¥</span>
         `;
 
         productCard.querySelector("img").addEventListener("click", () => {
